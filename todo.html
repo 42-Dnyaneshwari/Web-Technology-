@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List!!</title>
+    <style>
+        table,h1,div,body{
+            text-align: center;
+            background-color: rgb(115, 227, 227);
+            align-items: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="todo.js"></script>
+<body ng-controller="myController" >
+    <h1>To-Do Tasks!</h1>
+    <table border="1" align="center">  
+        <tr >
+            <th>ID</th>
+            <th>Name</th>
+            <th>Option</th>
+        </tr>
+        <tr ng-repeat="obj in arr">
+            <td ng-repeat="(k,v) in obj">{{v}}</td>
+            <td>
+                <input type="button" value="Delete" ng-click="DeleteItem(obj.id)">
+                <input type="button" value="Update" ng-click="Update(obj.id)">
+            </td>
+        </tr>
+    </table>
+<br>
+<br>
+    <div class="form">
+        ID:<input type="text" ng-model="tid">
+        Name:<input type="text" ng-model="tname">
+        <input type="button" value="Add" ng-click="AddItem()" >
+        
+    </div>
+    
+</body>
+</html>

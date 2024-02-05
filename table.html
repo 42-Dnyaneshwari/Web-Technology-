@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-module="mymodule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<body ng-controller="mycon">
+    <h1 align="center"> Table 1</h1>
+    <table border="1" align="center">
+        <tr>
+            <th>Sr.No</th>
+            <th>Item</th>
+            <th>Rate</th>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>mobile</td>
+            <td rowspan="2">800</td>
+
+        </tr>
+        <tr>
+            <td>002</td>
+            <td>Pen</td>
+           
+        </tr>
+        <tr>
+            <td>003</td>
+            <td>Laptop</td>
+            <td>12000</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total</td>
+            <td>5000</td>
+        </tr>
+    </table>
+    <br>
+    <h1 align="center"> Table 2</h1>
+    <table border="1" align="center">
+        <tr>
+            <th>Class</th>
+            <th>Name of the Student</th>
+            <th>Fees Due</th>
+        </tr>
+        <tr>
+            <td rowspan="2">SY Computer</td>
+            <td>ABhi</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            
+            <td>Mahi</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td rowspan="2">TY Computer</td>
+            <td>Sanuu</td>
+            <td>800</td>
+        </tr>
+        <tr>
+            
+            <td>Ranuu</td>
+            <td>700</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total</td>
+            <td>59000</td>
+        </tr>
+    </table>
+    <h1 align="center">Table 3</h1>
+    <table align="center" bordr="1">
+        <tr>
+            <th>Rno</th>
+            <th>Name</th>
+        </tr>
+        <tr ng-repeat="obj in arr">
+            <td ng-repeat="(k,v) in obj">{{v}}</td>
+        </tr>
+    </table>
+    
+    </div>
+    <script>
+        let x=angular.module('mymodule',[]);
+        x.controller('mycon',function($scope)
+        {
+            $scope.arr = [{ id: 1, Name: 'abc' }, { id: 2, Name: 'xyz' }, { id: 3, Name: 'pqs' }];
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="form.css">
+        <script src="form.js" type="text/javascript"></script>
+    </head>
+    <body>
+       <div class="container">
+            <form onsubmit="return myfun()">
+                <h2>Registration</h2>
+                <br>
+                <div class="content">
+                    <div class="input-box">
+                        <label>First Name:</label>
+                        <br>
+                        <input type="text" id="fname">
+                        <p id="usererror"></p>
+                    </div>
+                    <div class="input-box">
+                        <label>Last Name:</label>
+                        <br>
+                        <input onclick="myfun()" type="text" id="lname">
+                        <p id="uerror"></p>
+                    </div>
+                    <div class="input-box">
+                        <label>Email:</label>
+                        <br>
+                        <input  onclick="myfun()" type="text" id="email">
+                         <p id="eerror"> </p>
+                    </div>
+                    <div class="input-box">
+                        <label>Phone Number:</label>
+                        <br>
+                        <input  onclick="myfun()" type="text" id="phone">
+                        <p id="merror"></p>
+                    </div>
+                    <div class="input-box">
+                        <label>Password:</label>
+                        <br>
+                        <input  onclick="myfun()" type="text" id="password">
+                        <p id="perror"></p>
+                    </div>
+                    <div class="input-box">
+                        <label>Confirm Password:</label>
+                        <br>
+                        <input   type="text" id="cpass">
+                        <p id="cerror"></p>
+                    </div>
+                    <div class="buttonc">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        
+       </div>
+    </body>
+</html>

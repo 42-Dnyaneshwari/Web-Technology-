@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="mycontroller">
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Option</th>
+        </tr>
+        <tr ng-repeat="obj in arr">
+            <td ng-repeat="(k,v) in obj">{{v}}</td>
+            <td>
+                <input type="button" value="Delete" ng-click="Delete(obj.id)">
+                <input type="button" value="Update" ng-click="Update(obj.id)">
+            </td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <div>
+        ID:<input type="text" ng-model="tid">
+        Name:<input type="text" ng-model="tname">
+        <input type="button" value="Add" ng-click="AddItem()">
+    </div>
+
+
+
+    <script>
+        let x = angular.module("mymodule", []);
+        x.controller('mycontroller', function ($scope) {
+            //created javascript object
+            $scope.arr = [{ id: 1, Name: 'abc' }, { id: 2, Name: 'xyz' }];
+
+            $scope.AddItem = function () {
+                let n = {};
+                n.id = $score.tid;
+                n.Name = $scope.tname;
+                $scope.arr.push(n);
+            }
+
+            $scope.Delete = function (y) {
+                $scope.arr = $scope.arr.filter(function (o) {
+                    return o.id !== y;
+                })
+            }
+
+            $scope.UpdateItem = function(y) {
+        let newName = prompt("Enter the new name for the task with ID " + y);
+        if (newName !== null) {
+            for (let i = 0; i < $scope.arr.length; i++) {
+                if ($scope.arr[i].id == y) {
+                    $scope.arr[i].Name = newName;
+                    break;
+                }
+            }
+        }
+    }
+        });
+    </script>
+</body>
+
+</html>

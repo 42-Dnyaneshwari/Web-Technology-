@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<style>
+    fieldset{
+        background-color:black ;
+    }
+    body,div{
+        color:white;
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+    p{
+        color:red;
+    }
+</style>
+<body>
+
+    <fieldset align="center" >
+    <div class="container">
+        <form onsubmit="return myfun()">
+            Name:<br>
+            <br><input type="text" id="name" onclick="myfun()"><br>
+            <p id="nerror"></p>
+
+            Email:<br>
+            <br><input type="text" id="email" onclick="myfun()"><br>
+            <p id="eerror"></p>
+
+            Mob:<br>
+            <br><input type="text" id="mob" onclick="myfun()"><br>
+            <p id="merror"></p>
+
+            <br><input type="button" value="submit" >
+        </form>
+    </div>
+    </fieldset>
+    <script>
+        function myfun()
+        {
+            let a=document.getElementById("name").value;
+            let b=document.getElementById("email").value;
+            let c=document.getElementById("mob").value;
+            pat1=/[a-zA-Z]/;
+            pat2=/[a-z0-9][@][a-z][.][a-z]/;
+            pat3=/[0-9]/;
+            
+            if(pat1.test(a))
+            {
+                document.getElementById("nerror").innerHTML="";
+            }
+            else
+            {
+                document.getElementById("nerror").innerHTML="Invalid Name!";
+                return false;
+            }
+            if(pat2.test(b))
+            {
+                document.getElementById("eerror").innerHTML="";
+            }
+            else
+            {
+                document.getElementById("eerror").innerHTML="Invalid Email Address!";
+                return false;
+            }
+            if(pat3.test(c))
+            {
+                document.getElementById("merror").innerHTML="";
+            }
+            else
+            {
+                document.getElementById("merror").innerHTML="Invalid Mobile Number!";
+                return false;
+            }
+        alert("Form Submitted Successfully!!");
+    }
+    </script>
+</body>
+</html>

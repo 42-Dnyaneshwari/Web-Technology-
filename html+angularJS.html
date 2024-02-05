@@ -1,0 +1,18 @@
+<html ng-app="">
+  <head>
+    <title>My AngularJS App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  </head>
+  <body style="background-color:rgb(221, 126, 162)">
+        <input type="text" name="enter name" id="name" ng-model="x">
+        <h1>This is My Name:-</h1>
+        <b><p ng-bind="x">
+       </p></b>
+       <input type="number" name="enter n1" id="two" ng-model="a">
+        <input type="number" name="enter n2" id="three" ng-model="b">
+        <h1>The addition of a and b is:-</h1>
+        <b><p >
+           {{a+b}}
+       </p></b>
+  </body >
+</html>
